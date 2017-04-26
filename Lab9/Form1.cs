@@ -16,5 +16,29 @@ namespace Lab9
         {
             InitializeComponent();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            
+            var n = textBox1.Text.Length;
+            int[] a = new int[50];
+            
+            for (int i = 0; i < n-1; i++)
+            {
+                if (Char.IsDigit(textBox1.Text[i]))
+                    a[i] = textBox1.Text[i];
+            }
+
+            double average = 0;
+            double sum = 0;
+            for (int i = 0; i < a.Length-1; i++)
+            {
+                sum = sum + a[i];
+            }
+
+            average = sum / a.Length;
+            label1.Text = average.ToString();
+
+        }
     }
 }
