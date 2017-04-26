@@ -19,24 +19,13 @@ namespace Lab9
 
         private void button1_Click(object sender, EventArgs e)
         {
-            var n = textBox1.Text.Length;
-            int[] a = new int[50];
+            string[] numbers = textBox1.Text.Split(',');
 
-            for (int i = 0; i < n - 1; i++)
-            {
-                if (Char.IsDigit(textBox1.Text[i]))
-                    a[i] = textBox1.Text[i];
-            }
+            int sum = 0;
+            foreach (string num in numbers)            
+                sum += Convert.ToInt32(num);
 
-            double average = 0;
-            double sum = 0;
-            for (int i = 0; i < a.Length - 1; i++)
-            {
-                sum = sum + a[i];
-            }
-
-            average = sum / a.Length-1;
-            label1.Text = average.ToString();
+            label1.Text = "Average is " + (sum / numbers.Length);
         }
     }
 }
